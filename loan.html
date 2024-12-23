@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #444444;
+      height: 100vh;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      gap: 10px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+      <h1>simple loan calculator</h1>
+        
+      <label>Loan Amount</label>
+      <input type="number" class="js-loan-amount" placeholder="enter loan amount">
+
+      <label>Monthly Interest rate</label>
+      <input type="number" class="js-monthly-rate" placeholder="annual interest rate">
+
+      <label>Loan Lifetime</label>
+      <input type="number" class="js-loan-lifetime" placeholder="enter the number of repayments">
+
+      <label>Monthly repayment</label>
+      <input class="js-monthly-repayment">
+
+      <label>Total interest paid</label>
+      <input>
+
+      <label>Total amount paid</label>
+      <input>
+    </div>
+  </div>
+
+  <script>
+
+    document.querySelector('.js-loan-amount').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        document.querySelector('.js-monthly-rate').focus();
+
+      }
+    })
+
+    document.querySelector('.js-monthly-rate').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        document.querySelector('.js-loan-lifetime').focus();
+
+      }
+    })  
+
+    document.querySelector('.js-loan-lifetime').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        document.querySelector('.js-monthly-repayment').focus();
+      }
+    })  
+    
+    monthlyRepayment = () => {
+      const p = parseFloat(document.querySelector('.js-loan-amount').value);
+      const r = parseFloat(document.querySelector('.js-monthly-rate').value);
+      const n = parseFloat(document.querySelector('.js-monthly-repayment').value);
+
+      document.querySelector('.js-monthly-repayment').value = p + r + n;
+
+   
+      }
+    
+
+  
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
