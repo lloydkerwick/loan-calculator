@@ -1,3 +1,16 @@
+document.querySelector('.js-loan-amount').addEventListener('keydown', (event) => {
+  if (event.key === "Enter" ) {document.querySelector('.js-monthly-rate').focus()}
+})
+
+document.querySelector('.js-monthly-rate').addEventListener('keydown', (event) => {
+  if (event.key === "Enter" ) {document.querySelector('.js-loan-lifetime').focus()}
+})
+
+document.querySelector('.js-loan-lifetime').addEventListener('keydown', (event) => {
+  if (event.key === "Enter") {document.querySelector('.js-calculate-button').focus()}
+})
+
+
 document.querySelector('.js-calculate-button').addEventListener('click', () => {
   const p = parseFloat(document.querySelector('.js-loan-amount').value);
   const r = parseFloat(document.querySelector('.js-monthly-rate').value) / 100 / 12;
